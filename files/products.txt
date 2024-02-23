@@ -1,0 +1,6 @@
+Product{id=1, name='soccer', description='шахматы', count_prod=4}
+Product{id=0, name='soccer', description='шахматы', count_prod=4}
+Product{id=0, name='soccer', description='шахматы', count_prod=4}
+Product{id=0, name='soccer', description='шахматы', count_prod=4}
+Product{id=0, name='soccer', description='шахматы', count_prod=4}
+Product{id=0, name='soccer', description='шахматы', count_prod=4}

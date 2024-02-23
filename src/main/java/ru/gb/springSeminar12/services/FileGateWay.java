@@ -7,8 +7,6 @@ import org.springframework.messaging.handler.annotation.Header;
 import java.util.logging.FileHandler;
 
 @MessagingGateway(defaultRequestChannel = "textInputChanel")
-public class FileGateWay {
-    public void writeToFile(@Header(FileHeaders.FILENAME) String filename, String data) {
-
-    }
+public interface FileGateWay {
+    public void writeToFile(@Header(FileHeaders.FILENAME) String filename, String data);
 }

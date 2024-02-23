@@ -1,5 +1,6 @@
 package ru.gb.springSeminar12.configuration;
 
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.integration.annotation.ServiceActivator;
@@ -11,6 +12,7 @@ import org.springframework.integration.file.support.FileExistsMode;
 import org.springframework.messaging.MessageChannel;
 
 import java.io.File;
+import java.util.Map;
 
 @Configuration
 public class IntegrationConfig {
@@ -36,7 +38,9 @@ public class IntegrationConfig {
     @Bean
     @ServiceActivator(inputChannel = "fileWriterChanel")
     public FileWritingMessageHandler messageHandler(){
-        FileWritingMessageHandler handler = new FileWritingMessageHandler(new File("C:/files.txt"));
+        String dir = System.getProperty("user.dir");
+        //String dir2 = "D:\\Code\\Java\\Spring\\SpringSeminar12\\SpringSeminar12Integrate\\files";
+        FileWritingMessageHandler handler = new FileWritingMessageHandler(new File(dir,"files"));
         handler.setExpectReply(false);
         handler.setFileExistsMode(FileExistsMode.APPEND);
         handler.setAppendNewLine(true);
